@@ -1,0 +1,88 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Compress Image</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJp3TtD+f8GJ3pHjxPbr0j1OdI5d16WQ43d1f5An1br25D1E1j08dW0Z1z5f" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border-color: #ff6f61;
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 12px;
+        }
+        .btn-primary:hover {
+            background-color: #ff4c39;
+            border-color: #ff4c39;
+        }
+        .form-control {
+            background-color: #333;
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .form-control:focus {
+            background-color: #555;
+            border-color: #ff6f61;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.7);
+        }
+        .footer {
+            text-align: center;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload and Compress Image</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Upload Image and Compress</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Yashivam. All Rights Reserved.</p>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0SO5f4h92jZzFuC7BmsKPmZnDzvxybbYP58qPRiI5hIMaS1f" crossorigin="anonymous"></script>
+</body>
+</html>
